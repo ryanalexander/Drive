@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Raleway');
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: rgb(242, 242, 242);
+	overflow-x: hidden;
+}
+
+/* MAIN HEDER */
+div.head {
+	background: #fff;
+	color: #5C5C5C;
+	height: 6.7%;
+	width: 100%;
+	display:table;
+	text-align: center;
+}
+div.head span {
+	font-size: 14px;
+	display:table-cell;
+	vertical-align:middle;
+	transition: 0.5s ease;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+div.head span.align {width: 10%;}
+
+div.head span.user {width: 10%;padding: 0% 1%;transition: 0.5s ease;}
+div.head span.user:hover {cursor:pointer}
+
+div.head span.title {width: 10%;transition: 0.5s ease;}
+div.head span.title:hover {cursor: pointer;}
+div.head span.search {margin-left:5%;font-size:1em;width: 45%;transition: 0.5s ease;}
+div.head span.search input{background:#F7F7F7;padding:2.5%;width:90%;border:none;height:10%;transition:0.3s ease;}
+div.head span.search input:hover{background:#FBFBFB;cursor:pointer;}
+div.head span.search input:focus{background:white;box-shadow:0px 0px 6px 1px rgba(0,0,0,0.17);outline:none;}
+
+div.head span.align {
+	width: 30%;
+}
+div.head span.settings {width: 5%;transition: 0.5s ease;}
+div.head span.settings:hover {cursor:pointer;}
+
+div.head span.user {width: 5%;transition: 0.5s ease;}
+div.head span.user:hover {cursor:pointer;}
+div.head span.user img {border-radius:100%;height:7%;}
+
+/* SUB HEADER */
+div.subheader {
+	background: #fff;
+	color: #5C5C5C;
+	padding: 0.5%;
+	width: 100%;
+	display:table;
+	text-align: center;
+	box-shadow: 0.5px 6px 17px -7px rgba(0,0,0,0.75);
+}
+div.subheader span {
+	width: 25%;
+	height: 100%;
+	display:table-cell;
+	vertical-align:middle;
+}
+div.subheader span.new {width: 5%;}
+div.subheader span.drive {width: 12%;}
+div.subheader button.new {
+	background: #4484ec;
+	border: none;
+	padding: 5% 20%;
+	color: white;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+div.subheader button.drive {
+	background: transparent;
+	border: none;
+	padding: 0.5% 2%;
+	color: black;
+	font-size: 17;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+div.subheader span.disabled {background: gray;}
+div.container {
+	
+}
+
+div.container .sidebar {
+	display: inline-block;
+	min-width: 13%;
+	background: transparent;
+	height: 80%;
+}
+div.container .sidebar span.link {
+	display: block;
+	width: 100%;
+	color: #3F3F3F;
+	background: transparent;
+	padding: 5% 1%;
+	margin-top: 0.5%;
+	margin-left: 2%;
+	transition: 0.3s ease;
+	font-size:14;
+	font-family: sans-serif;
+	vertical-align: middle;
+}
+div.container .sidebar span.link img {
+	height: 3%;
+	margin-right: 7%;
+	vertical-align: middle;
+}
+div.container .sidebar span.link.active {
+	color: #4484ec;
+	background: rgba(214,214,214,0.3);
+	cursor: default;
+}
+div.container .sidebar span.link.active:hover{cursor:default;}
+div.container .sidebar span.link:hover {
+	cursor: pointer;
+	background: rgba(214,214,214,0.3);
+}
+
+div.container div.dpage {
+	display: inline-block;
+	vertical-align: top;
+	width: 84%;
+	margin-top: 2%;
+	height: 70%;
+	font-size: 15;
+	font-family: sans-serif;
+}
+div.container div.dpage p {
+	margin-left: 1.5%;
+	color: #787878;
+	font-size: 13;
+	margin-bottom: 1.5%;
+}
+div.container div.dpage span.file {
+	cursor:pointer;
+	display: inline-block;
+	margin-left: 1.5%;
+	background: white;
+	text-align: center;
+	min-width: 11%;
+	box-shadow: 0px 0px 2px 0px rgba(138,138,138,0.3);
+	transition: 0.3s ease;
+}
+div.container div.dpage span.folder {
+	cursor:pointer;
+	display: inline-block;
+	margin-left: 1.5%;
+	background: white;
+	text-align: left;
+	min-width: 11%;
+	box-shadow: 0px 0px 2px 0px rgba(138,138,138,0.3);
+	padding: 0.5% 0;
+	transition: 0.3s ease;
+}
+div.container div.dpage span.folder > * {display:inline;}
+div.container div.dpage span.folder.active {
+	background: #4484ec;
+	color: white;
+}
+div.container div.dpage span.file:hover {box-shadow: 0px 0px 2px 0px rgba(138,138,138,0.6);cursor:pointer;}
+div.container div.dpage span.file div.icon.file {
+	background: url("../img/unknown.icon") no-repeat;
+	background-size: 50%;
+	background-position: center;
+	display: block;
+	height: 22%;
+	width: 100%;
+}
+
+div.container div.dpage span.file div.icon.file.docx {background: url("../img/document.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.pptx {background: url("../img/slides.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.xml {background: url("../img/spreadsheet.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.txt {background: url("../img/document.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.mp3 {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.wav {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.pcm {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.aiff {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.aac {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.ogg {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.wma {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.flac {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.alac {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.wma {background: url("../img/music.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.log {background: url("../img/document.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.jpg {background: url("../img/picture.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.mpeg {background: url("../img/picture.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.jpeg {background: url("../img/picture.icon") no-repeat;background-size: 50%;background-position: center;}
+div.container div.dpage span.file div.icon.file.png {background: url("../img/picture.icon") no-repeat;background-size: 50%;background-position: center;}
+
+
+div.container div.dpage span.folder div.icon.folder {
+	background: url("../img/folder.icon"), white;
+	background-repeat: no-repeat;
+	border-radius: 5em;
+	padding: 0 2%;
+	margin-left: 15%;
+	background-size: 100%;
+	vertical-align: middle;
+	background-position: center;
+	display: inline-block;
+	width: 15%;
+	height: 6%;
+}
+div.container div.dpage span.folder div.filename {
+	font-weight: 300;
+	margin-left: 9%;
+	vertical-align: middle;
+	display: inline;
+	text-align: left;
+	font-family: sans-serif;
+}
+div.container div.dpage span.file div.filename {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 300;
+	text-align: left;
+	font-family: sans-serif;
+	padding: 6% 0;
+	padding-left: 20%;
+}
+div.container div.dpage span.file.active div.filename {background: #4484ec;color:white;}
+
+div.container div.dpage span.file.active {
+	box-shadow: 0px 0px 2px 0px rgba(138,138,138,1);
+}
+div#droppable {
+	display: none;
+	font-size: 100;
+	text-transform: uppercase;
+	color: #4484ec;
+	background: rgba(50,50,50,0.4);
+	font-family: sans-serif;
+	position: fixed;
+	border: 4px dashed #4484ec;
+	z-index: 100;
+	width: 99.5%;
+	height: 99%;
+	text-align: center;
+}
+div#droppable span {
+	top: 45%;
+}
+div#upload_mgr {
+	background: #fff;
+	box-shadow: 0px 0px 2px 0px rgba(138,138,138,1);
+	overflow: none;
+	display: block;
+	color: black;
+	transition: 0.5s ease;
+	position: fixed;
+	z-index: 99;
+	bottom: 0;
+	right: 0;
+	width: 30%;
+	margin-right: 1%;
+	margin-bottom: -100%;
+	font-family: sans-serif;
+}
+div#upload_mgr.active {
+	margin-bottom: 1%;
+}
+div#upload_mgr div.head {
+	vertical-align: top;
+	background: #303030;
+	padding: 4% 0;
+	color: white;
+	width: 100%;
+}
+div#upload_mgr div.head span {
+	display: inline-block;
+    white-space: nowrap;
+}
+div#upload_mgr div.head span.title {
+	float:left;
+	margin-left: 10%;
+}
+div#upload_mgr div.head span.actions {
+	float: right;
+	margin-right: 5%;
+}
+div#upload_mgr div.container {
+	overflow-x: auto;
+	width: 100%;
+	height: 40%;
+}
+div#upload_mgr div.container p.item {
+	width: 90%;
+	padding: 5% 5%;
+	display: table;
+}
+div#upload_mgr div.container p.item:hover {
+	background: rgba(50,50,50,0.03);
+}
+div#upload_mgr div.container p.item span {
+	display:table-cell;
+}
+div#upload_mgr div.container p.item span.progress.done {color: lime;}
+div#upload_mgr div.container p.item span.progress.failed {color: red;}
+div#alert {
+	background: #434343;
+	color: white;
+	transition: 0.5s ease;
+	position: fixed;
+	width: 20%;
+	bottom: 0;
+	padding: 1%;
+	margin-left: -100%;
+	margin-bottom: 1%;
+}
+div#alert.active {
+	margin-left: 1%;
+}
+div#alert span.close {
+	float:right;
+	margin-right: 1%;
+	cursor: pointer;
+}
+span.datausage {
+	margin-left: 1.5%;
+	color: #787878;
+}
+
+/* MODEL UI */
+.model {
+	display: none;
+	transition: 0.5s ease;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+	position: fixed;
+	background: rgba(50,50,50,0.2);
+}
+.model.active {
+	display:block;
+}
+.model .box {
+	transition: 1s ease;
+	width: 70%;
+	margin-left: 15%;
+	background: white;
+	height: 80%;
+	margin-top: 200%;
+}
+.model.active .box{
+	margin-top: 5%;
+}
+.model .box.newfile {
+	text-align: center;
+	width: 30%;
+	height: 10%;
+	margin-left: 35%;
+	margin-top: 10%;
+}
+
+/* DROPDOWN */
+
+.dropdown-content {
+    display: none;
+	text-align: left;
+    position: absolute;
+    background-color: white;
+    margin-left: 1%;
+	width: 15%;
+    overflow: auto;
+    box-shadow: 0px 0px 2px 0px rgba(138,138,138,1);
+    z-index: 100;
+}
+
+.dropdown-content a {
+    color: #5C5C5C;
+    padding: 2% 8%;
+	margin: 3% 0;
+	font-family: sans-serif;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content hr {
+	margin: 2% 0;
+	border: 1px solid rgba(138,138,138,0.3);
+	box-shadow: none;
+}
+
+.dropdown-content a:hover {background-color: #ECECEC}
+
+.show {display:block;}
+
+
+/*
+
+		DEVELOPMENT SECTION
+       = Contains dead code =
+*/
+div.overlay.showfile {
+	display: none;
+	background: rgba(50,50,50,0.5);
+	position: fixed;
+	z-index: 101;
+	width: 100%;
+	height: 100%;
+}
+div.overlay.showfile div.content{
+	width: 50%;
+	height: 90%;
+	margin-top: 4%;
+	margin-left: 25%;
+	background: white;
+}
+div.overlay.showfile span.controls{
+	position: fixed;
+	top: 0;
+	margin-left: 80%;
+	width: 20%;
+	padding: 1% 0;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+div.overlay.showfile span.exit{
+	position: fixed;
+	top: 0;
+	font-size: 50;
+	margin-left: 2%;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+div.overlay.showfile span.exit:hover {
+	text-shadow: 1px 1px 5px rgba(255,255,255, 0.5);
+}
+
+
+
+/* PHOTOS */
+div.overlay.photo {
+	display: none;
+	background: rgba(50,50,50,0.5);
+	position: fixed;
+	z-index: 101;
+	width: 100%;
+	height: 100%;
+}
+div.overlay.photo.active {
+	display: block;
+}
+div.overlay.photo div.content{
+	text-align: center;
+	width: 50%;
+	height: 90%;
+	margin-top: 4%;
+	margin-left: 25%;
+	background: transparent;
+}
+div.overlay.photo div.content img {
+	border: 2px solid white;
+	width: 80%;
+}
+div.overlay.photo span.controls{
+	position: fixed;
+	top: 0;
+	margin-left: 80%;
+	width: 20%;
+	padding: 1% 0;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+div.overlay.photo span.exit{
+	position: fixed;
+	top: 0;
+	font-size: 50;
+	margin-left: 2%;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+div.overlay.photo span.exit:hover {
+	text-shadow: 1px 1px 5px rgba(255,255,255, 0.5);
+}
+
+
+/* MUSIC */
+
+div.overlay.music {
+	position: fixed;
+	bottom: 1%;
+	transition: 0.5s ease;
+	background: transparent;
+	width: 20%;
+	margin-left: 40%;
+	margin-bottom: -50%;
+	background: white;
+}
+div.overlay.music.active {
+	margin-bottom: 0%;
+}
+div.overlay.music span.close {
+	margin-left: 15%;
+	cursor: pointer;
+	vertical-align: top;
+	font-size: 20;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+div.overlay.music audio::-webkit-media-controls-panel {
+	background: transparent;
+}
